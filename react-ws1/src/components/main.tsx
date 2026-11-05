@@ -1,7 +1,7 @@
 import filtering from "./filtering.tsx";
 import Filtering from "./filtering.tsx";
 import Products from "./Products.tsx";
-import Toast from "./toast.tsx";
+
 function MainSection()
 {
   return(
