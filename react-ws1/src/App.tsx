@@ -9,6 +9,10 @@ import filtering from './components/filtering.tsx'
 import MainSection from "./components/main.tsx";
 import Toast from "./components/toast.tsx";
 import Products from "./components/Products.tsx";
+import {CartProvider} from "./components/CartContext.tsx";
+
+import Newsletter from "./components/newsletter.tsx";
+import Footer from "./components/footer.tsx";
 function App() {
 
   const [cartCount, setCartCount] = useState<number>(0);
@@ -18,9 +22,14 @@ function App() {
   }
   return (
     <>
-<Navbar />
+<CartProvider>
+  <Navbar />
+
         <Toast />
   <MainSection />
+</CartProvider>
+      <Newsletter/>
+      <Footer />
 </>
   )
 }

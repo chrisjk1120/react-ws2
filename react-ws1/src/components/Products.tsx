@@ -2,10 +2,8 @@ import type { Product } from "./ProductType.ts";
 import ProductCards from "./ProductCards.tsx";
 import { useState } from "react";
 const ProductList = () => {
-  const [cartCount, setCartCount] = useState<number>(0);
-  const handleAddToCart = () => {
-    setCartCount((prevCount) => prevCount + 1);
-  }
+
+
   const products: Product[] = [
     {
       id: 1,
@@ -30,7 +28,7 @@ const ProductList = () => {
       <section className="lg:col-span-9">
     <div id="product-grid" className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {products.map((product) => (
-        <ProductCards key={product.id} {...product} onAddToCart={handleAddToCart} />
+        <ProductCards key={product.id} {...product} />
       ))}
      </div>
       </section>

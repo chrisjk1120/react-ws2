@@ -72,7 +72,7 @@ function Navbar() {
                 <path d="M16 10a4 4 0 0 1-8 0"/>
               </svg>
 
-            <CartCounter count={0}/>
+            <CartCounter/>
             </button>
 
 

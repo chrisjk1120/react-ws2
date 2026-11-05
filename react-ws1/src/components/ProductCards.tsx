@@ -1,6 +1,6 @@
 import type { ToastMessage, MessageType } from "./toastMessage";
 import { useState } from "react";
-
+import { useCart } from "./CartContext";
 interface ProductCardProps {
   title: string;
   category: string;
@@ -17,6 +17,7 @@ const ProductCards = ({
                         image,
                         discount
 }: ProductCardProps) => {
+  const { addToCart } = useCart();
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
   const addToast = (message: string, type: MessageType = "success") => {
     const id = crypto.randomUUID();
@@ -30,7 +31,7 @@ const ProductCards = ({
 
   const add2Cart = (productName: string) => {
     addToast(`${productName} has been successfully added to cart`, "success");
-
+    addToCart();
   };
 
   return (
