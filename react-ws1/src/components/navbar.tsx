@@ -1,5 +1,8 @@
 
+import {useState } from 'react';
+import CartCounter from './CartCounter';
 function Navbar() {
+  const [cartCount, setCartCount] = useState<number>(0);
   return (
     <header className="sticky top-0 z-40 border-b border-blue-700/30 bg-blue-600 shadow-lg shadow-blue-900/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -69,8 +72,7 @@ function Navbar() {
                 <path d="M16 10a4 4 0 0 1-8 0"/>
               </svg>
 
-              <span id="cart-count"
-                    className="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white shadow-sm hidden">0</span>
+            <CartCounter count={0}/>
             </button>
 
 
